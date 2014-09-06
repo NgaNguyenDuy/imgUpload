@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var app = require('../server');
+var config = require('../config');
+
+app.set('port', process.env.PORT || config.port);
+
+var server = app.listen(app.get('port'), function() {
+    console.log('Server was running at port ' + server.address().port);
+});
