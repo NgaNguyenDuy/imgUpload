@@ -2,9 +2,10 @@ doctype html
 html(lang="en")
     head
         title= title
+        script(type='text/javascript', src='/js/handlerFiles.js')
     body
         h1 Image Upload - Template Engine For Node
         form(action="/upload", method="post", enctype="multipart/form-data")
-            input(type="file", name="fileImages" accept="image/*")
+            input(type="file", id="file" name="fileImages" onchange="startRead()" accept="image/*" multiple)
             input(type="submit", value="Upload")
 
